@@ -1,0 +1,20 @@
+[package]
+name = "looking-glass"
+version = "0.1.0"
+edition = "2021"
+description = "Transparent always-on-top image overlay for tracing"
+license = "MIT"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[dependencies]
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "default_fonts"] }
+global-hotkey = "0.10.0"
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "webp", "bmp", "gif"] }
+rfd = "0.18.0"
+
+[build-dependencies]
+winresource = "0.1.34"
